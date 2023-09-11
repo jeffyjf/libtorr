@@ -37,7 +37,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include "libtorrent/string_view.hpp"
 #include "libtorrent/span.hpp"
 #include "libtorrent/error_code.hpp"
-
+#include "boost/asio/ip/address_v4.hpp"
 #include <vector>
 #include <string>
 #include <cstdint>
@@ -93,7 +93,8 @@ namespace libtorrent {
 				&& lhs.local == rhs.local;
 		}
 	};
-
+	std::vector<boost::asio::ip::address_v4> parse_upload_white_list(std::string const& in);
+	std::vector<boost::asio::ip::address_v4> parse_group_members_list(std::string const& in);
 	// this parses the string that's used as the listen_interfaces setting.
 	// it is a comma-separated list of IP or device names with ports. For
 	// example: "eth0:6881,eth1:6881" or "127.0.0.1:6881"

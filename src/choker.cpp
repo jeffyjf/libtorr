@@ -1,4 +1,4 @@
-﻿/*
+/*
 
 Copyright (c) 2014-2018, Arvid Norberg
 All rights reserved.
